@@ -157,6 +157,7 @@ void InterruptManager::Activate()
         ActiveInterruptManager->Deactivate();
 
     ActiveInterruptManager = this;
+    printf("interrupt!");
     asm("sti");
 }
 

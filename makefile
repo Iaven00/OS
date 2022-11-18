@@ -65,6 +65,10 @@ mykernel.iso: mykernel.bin
 install: mykernel.bin
 	sudo cp $< /boot/mykernel.bin
 
+run: mykernel.iso
+#	echo 'SUCCESS'
+	(killall VirtualBox and sleep 1) || true
+	VirtualBox --startvm "My OS" &
 .PHONY: clean
 clean:
 	rm -rf obj mykernel.bin mykernel.iso
